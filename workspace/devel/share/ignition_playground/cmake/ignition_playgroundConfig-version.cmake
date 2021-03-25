@@ -1,0 +1,1 @@
+/home/pannaton/workspace/devel/.private/ignition_playground/share/ignition_playground/cmake/ignition_playgroundConfig-version.cmake

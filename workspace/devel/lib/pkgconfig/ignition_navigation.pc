@@ -1,0 +1,1 @@
+/home/pannaton/workspace/devel/.private/ignition_navigation/lib/pkgconfig/ignition_navigation.pc

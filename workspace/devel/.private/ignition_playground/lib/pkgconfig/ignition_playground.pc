@@ -1,0 +1,8 @@
+prefix=/home/pannaton/workspace/devel/.private/ignition_playground
+
+Name: ignition_playground
+Description: Description of ignition_playground
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

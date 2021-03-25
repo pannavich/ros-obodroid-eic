@@ -1,0 +1,1 @@
+/home/pannaton/workspace/devel/.private/ignition_playground/lib/pkgconfig/ignition_playground.pc

@@ -1,0 +1,5 @@
+ignition_navigation
+/home/pannaton/workspace/devel/.private/ignition_navigation/cmake.lock /home/pannaton/workspace/devel/./cmake.lock
+/home/pannaton/workspace/devel/.private/ignition_navigation/lib/pkgconfig/ignition_navigation.pc /home/pannaton/workspace/devel/lib/pkgconfig/ignition_navigation.pc
+/home/pannaton/workspace/devel/.private/ignition_navigation/share/ignition_navigation/cmake/ignition_navigationConfig-version.cmake /home/pannaton/workspace/devel/share/ignition_navigation/cmake/ignition_navigationConfig-version.cmake
+/home/pannaton/workspace/devel/.private/ignition_navigation/share/ignition_navigation/cmake/ignition_navigationConfig.cmake /home/pannaton/workspace/devel/share/ignition_navigation/cmake/ignition_navigationConfig.cmake

@@ -1,0 +1,8 @@
+prefix=/home/pannaton/workspace/devel/.private/ignition_navigation
+
+Name: ignition_navigation
+Description: Description of ignition_navigation
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

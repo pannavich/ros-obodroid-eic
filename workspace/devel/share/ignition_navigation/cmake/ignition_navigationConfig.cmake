@@ -1,0 +1,1 @@
+/home/pannaton/workspace/devel/.private/ignition_navigation/share/ignition_navigation/cmake/ignition_navigationConfig.cmake

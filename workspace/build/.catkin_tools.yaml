@@ -1,0 +1,6 @@
+devel_space: /home/pannaton/workspace/devel
+install: false
+install_space: /home/pannaton/workspace/install
+profile: default
+source_space: /home/pannaton/workspace/src
+workspace: /home/pannaton/workspace
