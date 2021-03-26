@@ -17,15 +17,18 @@ Date : 16-Mar-2021
 import rospy
 from std_msgs.msg import Empty, Bool
 from modules.mission import RobotMission
-from modules.move_base_interface import MoveBaseInterface
+from modules.move_base_interface import MoveBaseInterface 
+from sensor_msgs.msg import LaserScan
 
 
 ##############################################################################
 # Class
 ##############################################################################
 
+laser_mid = None
 
 class Robot(object):
+
     """
     Robot Class
     """
@@ -35,6 +38,9 @@ class Robot(object):
 
         ################### CODE HERE ###################
         self.robot_mission = RobotMission()
+        self.laser_sub = rospy.Subscriber('/scan', LaserScan, self.laser_callback)
+        # self.clear_map = rospy.ServiceProxy('/move_base/clear_costmap',Empty)
+    
         #################################################
 
         # Referee Signal Subscription
@@ -131,15 +137,37 @@ class Robot(object):
 
         if mission_type == "move_base":
             self.move_base_interface.send_goal(mission)
-        elif mission_type == "custom":
-            self.log("Custom Type Mission Received")
-            self.log("Do Something")
+        elif mission_type == "wait_obstacle":
+            self.log("Wait for obstacle")
+            self.wait_obstacle()
+            self.log("Obstacle passed")
+            self.move_base_interface.send_goal(mission)
         else:
             self.log(
                 "mission_type[{}] is not defined in do_mission".format(
                     mission_type
                 )
             )
+    
+    def wait_obstacle(self):
+     
+        while(laser_mid>10):
+            print(laser_mid)
+            pass
+
+        while(laser_mid<10):
+            print(laser_mid)
+            pass
+        rospy.sleep(0.5)
+
+    def laser_callback(self, msg):
+        #x = msg.ranges[320]
+        #return x
+	global laser_mid
+	laser_mid = msg.ranges[320]
+
+    def clearMap(self):
+        clear_map()
 
     def log(self, msg):
         """
@@ -148,6 +176,11 @@ class Robot(object):
         rospy.loginfo(
             "[robot] : {}".format(msg)
         )
+    
+
+
+    
+    
 
 ##############################################################################
 # Main
@@ -155,4 +188,6 @@ class Robot(object):
 if __name__ == '__main__':
     rospy.init_node("robot_node")
     ROBOT = Robot()
+    # rospy.Timer(rospy.Duration(3), ROBOT.clearMap())
+    # rospy.Timer(rospy.Duration(3), ROBOT.laser_callback)
     rospy.spin()
